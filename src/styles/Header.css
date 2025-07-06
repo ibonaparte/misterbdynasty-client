@@ -1,0 +1,140 @@
+.nav-wrapper {
+  background-color: #000;
+}
+
+nav {
+  background-color: #000;
+  height: 80px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  max-width: 1523px;
+  margin: auto;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.nav-links a,
+#nav-home {
+  color: #c28c19;
+  font-size: 1.5rem;
+  transition: all 0.5s ease-out;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+
+#nav-home {
+  padding-left: 20px;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  nav {
+    position: relative;
+    display: block;
+  }
+
+  nav:has(.hamburger-menu[open]) {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+
+  #nav-home {
+    display: block;
+    padding-left: unset;
+    text-align: center;
+    margin: auto;
+    padding: 8px;
+  }
+
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    transition: all 0.5s ease-in-out;
+    height: 32px;
+    width: 36px;
+  }
+
+  .hamburger-menu:not([open]) ~ .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu[open] > summary {
+    position: relative;
+  }
+
+  .hamburger-menu[open] > summary > .hamburger-menu--line:first-of-type {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 12px;
+    margin: 0;
+  }
+
+  .hamburger-menu[open] > summary > .hamburger-menu--line:last-of-type {
+    transform: rotate(135deg);
+    position: absolute;
+    top: 12px;
+    margin: 0;
+  }
+
+  .hamburger-menu[open] > summary > .hamburger-menu--line:nth-child(2) {
+    display: none;
+  }
+
+  .hamburger-menu > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .hamburger-menu > summary::marker,
+  .hamburger-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .hamburger-menu--line {
+    background-color: #fff;
+    border-radius: 50px;
+    height: 3px;
+    width: 36px;
+    margin: 8px 0px;
+    display: block;
+  }
+
+  .hamburger-menu--line:first-of-type {
+    margin: 0px 0px 7px 0;
+  }
+
+  .hamburger-menu--line:last-of-type {
+    margin: 7px 0px 0px 0;
+  }
+
+  nav {
+    height: fit-content;
+  }
+
+  .nav-links {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    height: fit-content;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #000;
+  }
+  .nav-links > a:last-of-type {
+    padding-bottom: 24px;
+  }
+}

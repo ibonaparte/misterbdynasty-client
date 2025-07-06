@@ -1,0 +1,190 @@
+body {
+  background-color: #130c0e;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  color: #1f1f1f;
+  background-color: #fff;
+  --tcu-color: #4d1979;
+  --msu-color: #18453b;
+  --vt-color: #861f41;
+  --ucf-color: #ba9b37;
+  --minn-color: #7a0019;
+  --ind-color: #990000;
+  --syr-color: #f76900;
+}
+
+main {
+  background-color: #141414;
+  height: calc(100vh - 80px);
+}
+
+#content {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1523px;
+  margin: auto;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+#inner-content {
+  padding: 2rem;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*Team Cards*/
+/*Team Logo variables*/
+.team-card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.team-card {
+  position: relative;
+  background-color: #fff;
+  color: #212121;
+  border-radius: 4px;
+  border: 1px solid #6e6e6e;
+  display: flex;
+  padding: 8px;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  align-items: center;
+  min-height: 80px;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+}
+
+.team-card__info__team {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.team-card__info__gamertag {
+  font-size: 1rem;
+}
+
+.team-card__logo {
+  align-self: center;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.team-card::before {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  background-position: center;
+  z-index: -1;
+}
+
+.team-card:hover::before {
+  opacity: 0.4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+.team-card:hover .team-card__info__team {
+  font-weight: bold;
+}
+
+/*Specific Team Styles*/
+#tcu-card:hover::before {
+  background-color: #4d1979;
+  background-image: url("assets/img/TCU-logo.png");
+}
+
+#msu-card:hover::before {
+  background-color: #18453b;
+  background-image: url("assets/img/MSU-logo.png");
+}
+
+#vt-card:hover::before {
+  background-color: #861f41;
+  background-image: url("assets/img/VT-logo.png");
+}
+
+#uf-card:hover::before {
+  background-color: #0021a5;
+}
+
+#okst-card:hover::before {
+  background-color: #fe5c00;
+}
+
+#ttu-card:hover::before {
+  background-color: #cc0000;
+}
+
+#minn-card:hover::before {
+  background-color: #ffb71e;
+  background-image: url("assets/img/MINN-logo.png");
+}
+
+#bc-card:hover::before {
+  background-color: #98002e;
+  background-image: url("assets/img/BC-logo.png");
+}
+
+#stan-card:hover::before {
+  background-color: #8c1515;
+}
+
+#ucf-card:hover::before {
+  background-color: #00000090;
+  background-image: url("assets/img/UCF-logo.png");
+}
+
+#syr-card:hover::before {
+  background-color: #f76900;
+  background-image: url("assets/img/SYR-logo.png");
+}
+
+#ind-card:hover::before {
+  background-color: #99000080;
+  background-image: url("assets/img/IND-logo.png");
+}
+
+/*New Match Form*/
+.new-match-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-match-form label {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 24px;
+  column-gap: 8px;
+  padding: 8px;
+  text-align: right;
+}
+
+.new-match-form label:has(input[type="checkbox"]) {
+  text-align: left;
+  grid-template-columns: 50px 250px;
+}
+
+.new-match-form input {
+  padding: 8px;
+}

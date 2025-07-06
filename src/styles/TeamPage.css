@@ -1,0 +1,180 @@
+/*Team Header*/
+.team-header {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #a8a8a8;
+  padding-bottom: 20px;
+}
+
+.header-logo {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.team-header--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-header--text h1,
+.team-header--text h2 {
+  margin: 0;
+}
+
+.team-header--info {
+  display: flex;
+}
+
+.team-header--platform {
+  height: 24px;
+  width: auto;
+  align-self: center;
+}
+
+.team-header--info a {
+  color: #212121;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.team-header--info a::after {
+  content: " ";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../assets/img/new-tab.png");
+}
+
+.team-header--text h2 {
+  font-weight: normal;
+}
+
+.team-records {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+}
+
+.team-records--title {
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+
+.team-records--stats {
+  display: flex;
+  gap: 24px;
+  border: 1px solid #a8a8a8;
+  padding: 0 12px;
+  border-radius: 0 0 6px 6px;
+}
+
+.team-records--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-records--label {
+  font-size: 0.85rem;
+}
+
+.team-records--content {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#seasons {
+  border: 2px solid #212121;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 1.25rem;
+  margin-top: 12px;
+}
+
+#seasons > option {
+  font-size: 1rem;
+}
+
+#seasons > option:hover {
+  background-color: #c28c19;
+}
+
+#seasons > option:checked {
+  background-color: #c28c19;
+  font-weight: bold;
+}
+
+/*Results Table*/
+.results-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.season-select {
+  text-align: left;
+}
+
+.results-table {
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #f1f2f3;
+}
+
+.results-table tr {
+  border-bottom: 1px solid #f1f2f3;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #00000005;
+}
+
+.results-week {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.results-opponent {
+  white-space: nowrap;
+}
+
+.results-score {
+  white-space: nowrap;
+}
+
+.result--win {
+  font-weight: bold;
+  color: #009944;
+}
+
+.result--loss {
+  font-weight: bold;
+  color: #dd0000;
+}
+
+@media (max-width: 900px) {
+  .team-header {
+    text-align: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .team-header--info {
+    justify-content: center;
+  }
+
+  .results-week {
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .results-opponent {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

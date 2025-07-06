@@ -16,7 +16,7 @@ const TeamPage = () => {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const response = await axios.get("http://localhost:8080/api");
+      const response = await axios.get("https://misterb-dynasty-server.onrender.com/api");
       setUser(response.data.users.find((obj) => obj.username === thisUser));
       setTeams(response.data.teams);
     };
@@ -28,7 +28,7 @@ const TeamPage = () => {
     if (user && user.current_team) {
       const fetchMatches = async () => {
         const response = await axios.get(
-          `http://localhost:8080/api/matches/${user.current_team}`
+          `https://misterb-dynasty-server.onrender.com/api/matches/${user.current_team}`
         );
         setMatches(response.data);
       };
